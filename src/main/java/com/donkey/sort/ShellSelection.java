@@ -3,7 +3,7 @@ package com.donkey.sort;
 /**
  * @author: lxc
  * @Date: 2019/5/11 18:59
- * @Description: 希尔排序
+ * @Description: 希尔排序 平均时间复杂度 O(n1.3)
  * 希尔排序就是以间隔进行的插入排序
  */
 public class ShellSelection {
