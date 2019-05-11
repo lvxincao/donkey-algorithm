@@ -11,21 +11,29 @@ package com.donkey.sort;
 public class BubbleSelection {
 
     public static void main(String[] args) {
-        int[] arra = {2, 9, 1000, 81, 92, 78, 64, 1, 59, 100, 96, 54};
+        int[] arra = {1, 2, 4, 6, 2, 5, 6, 7, 8};
         sort(arra);
         System.out.print("最后得到的数组：");
         SelectionSort.print(arra);
     }
 
-    static void sort(int[] arra){
-        for (int i = arra.length - 1; i > 0; i--) {
-            for (int j = 0; j < i; j++) {
+    static void sort(int[] arra) {
+        int k = arra.length - 1;
+        for (int i = k; i > 0; i--) {
+            k = i;
+            boolean flag = false;
+            for (int j = 0; j < k; j++) {
                 if (arra[j] > arra[j + 1]) {
                     SelectionSort.swap(arra, j, j + 1);
+                    flag = true;
+                    k=j+1;
                 }
             }
-            System.out.print("第" + (arra.length -i) + "次交换的结果：");
+            System.out.print("第" + (arra.length - i) + "次交换的结果：");
             SelectionSort.print(arra);
+            if (!flag) {
+                break;
+            }
         }
     }
 
