@@ -5,6 +5,7 @@ package com.donkey.sort;
  * @Date: 2019/5/11 21:15
  * @Description: 归并排序 merge sort
  * java对象的排序用的是改进的归并排序
+ * 平均时间复杂度O(nlogn) 空间复杂度O(n)
  */
 public class MergeSort {
     public static void main(String[] args) {
