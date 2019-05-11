@@ -9,7 +9,7 @@ package com.donkey.sort;
 public class SelectionSort {
 
     public static void main(String[] args) {
-        int[] arra = {5, 8, 4, 6, 7, 3, 7};
+        int[] arra = {2, 3, 1, 2, 7, 3, 4, 2, 9, 10, 23, 81, 76, 75};
         for (int i = 0; i < arra.length - 1; i++) {
             int minPos = i;
             for (int j = i + 1; j < arra.length; j++) {
@@ -22,10 +22,10 @@ public class SelectionSort {
         }
     }
 
-    static void swap(int[] arra, int currentPos, int minPos) {
+    static void swap(int[] arra, int currentPos, int pos) {
         int temp = arra[currentPos];
-        arra[currentPos] = arra[minPos];
-        arra[minPos] = temp;
+        arra[currentPos] = arra[pos];
+        arra[pos] = temp;
     }
 
     static void print(int[] arra) {
