@@ -18,15 +18,12 @@ public class BubbleSelection {
     }
 
     static void sort(int[] arra) {
-        int k = arra.length - 1;
-        for (int i = k; i > 0; i--) {
-            k = i;
+        for (int i = arra.length - 1; i > 0; i--) {
             boolean flag = false;
-            for (int j = 0; j < k; j++) {
+            for (int j = 0; j < i; j++) {
                 if (arra[j] > arra[j + 1]) {
                     SelectionSort.swap(arra, j, j + 1);
                     flag = true;
-                    k=j+1;
                 }
             }
             System.out.print("第" + (arra.length - i) + "次交换的结果：");
