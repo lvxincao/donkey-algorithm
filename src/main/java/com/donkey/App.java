@@ -5,6 +5,6 @@ package com.donkey;
  */
 public class App {
     public static void main(String[] args) {
-
     }
+
 }

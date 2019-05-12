@@ -9,7 +9,7 @@ package com.donkey.sort;
  */
 public class MergeSort {
     public static void main(String[] args) {
-        int[] arra = {1, 8, 12, 11, 39, 56, 43, 22, 99, 4, 7, 8, 3, 6, 9};
+        int[] arra = {1, 3, 5, 39, 12, 34, 21, 3, 7, 2, 4, 6, 8, 10};
         sort(arra, 0, arra.length - 1);
         SelectionSort.print(arra);
     }

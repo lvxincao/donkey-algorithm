@@ -28,7 +28,7 @@ public class SelectionSort {
         arra[pos] = temp;
     }
 
-    static void print(int[] arra) {
+    public static void print(int[] arra) {
         for (int i = 0; i < arra.length; i++) {
             System.out.print(arra[i] + " ");
         }
