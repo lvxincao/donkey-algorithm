@@ -22,13 +22,17 @@ public class ShellSelection {
      * @param arra
      */
     static void sort1(int[] arra) {
-        for (int h = arra.length / AVERAGE; h > 0; h /= AVERAGE) {
-            for (int i = h; i < arra.length; i++) {
-                for (int j = i; j > h - 1; j = j - h) {
-                    if (arra[j] < arra[j - h]) {
-                        SelectionSort.swap(arra, j, j - h);
-                    }
+        for (int gap = arra.length / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < arra.length; i++) {
+                int j = i;
+                int pos = i;
+                int temp = arra[j];
+                while (j > (gap - 1) && arra[j - gap] > temp) {
+                    arra[j] = arra[j - gap];
+                    pos = j - gap;
+                    j -= gap;
                 }
+                arra[pos] = temp;
             }
         }
     }
