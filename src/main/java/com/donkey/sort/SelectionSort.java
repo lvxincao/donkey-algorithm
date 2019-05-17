@@ -5,6 +5,7 @@ package com.donkey.sort;
  * @Date: 2019/5/9 19:17
  * @Description: 选择排序 时间复杂度O（n2） 不稳
  * 选择排序基本就是每次找出最小的数字，然后将下标进行交换
+ * 所以选择排序是一种交换的排序
  */
 public class SelectionSort {
 
@@ -22,7 +23,7 @@ public class SelectionSort {
         }
     }
 
-    static void swap(int[] arra, int currentPos, int pos) {
+    public static void swap(int[] arra, int currentPos, int pos) {
         int temp = arra[currentPos];
         arra[currentPos] = arra[pos];
         arra[pos] = temp;

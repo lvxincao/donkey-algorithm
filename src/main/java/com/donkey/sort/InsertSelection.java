@@ -11,29 +11,14 @@ public class InsertSelection {
 
     public static void main(String[] args) {
         int[] arra = {23, 21, 25, 27, 29, 13, 11, 9, 3, 5, 7};
-
         for (int i = 1; i < arra.length; i++) {
-            //方法1
-//            for (int j = 0; j <i; j++) {
-//                if (arra[i] < arra[j]) {
-//                    SelectionSort.swap(arra, j, i);
-//                }
-//            }
-            // 方法2
-//            for (int j = i; j > 0; j--) {
-//                if(arra[j-1] > arra[j]){
-//                    SelectionSort.swap(arra, j, j-1);
-//                }
-//            }
-
-            //方法3
             int temp = arra[i];
             int p = i;
-            for (int j = i; j > 0; j--) {
-                if (arra[j - 1] > temp) {
-                    arra[j] = arra[j - 1];
-                    p = j - 1;
-                }
+            int j = i;
+            while (j > 0 && arra[j - 1] > temp) {
+                arra[j] = arra[j - 1];
+                p = j - 1;
+                j--;
             }
             arra[p] = temp;
             System.out.print("第" + i + "次交换：");
