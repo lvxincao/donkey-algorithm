@@ -11,8 +11,8 @@ public class ShellSelection {
 
     public static void main(String[] args) {
         int[] arra = {20, 18, 13, 21, 19, 43, 25, 89, 83, 74};
-//        sort1(arra);
-        sort2(arra);
+        sort1(arra);
+//        sort2(arra);
         SelectionSort.print(arra);
     }
 

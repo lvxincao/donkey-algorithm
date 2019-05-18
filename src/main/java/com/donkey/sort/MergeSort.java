@@ -6,6 +6,7 @@ package com.donkey.sort;
  * @Description: 归并排序 merge sort
  * java对象的排序用的是改进的归并排序
  * 平均时间复杂度O(nlogn) 空间复杂度O(n)
+ * 归并排序需要理解两个问题 递归和 给定一个数组，如果数组的前后两个部分是有序的，那就要merge一个有序的数组
  */
 public class MergeSort {
     public static void main(String[] args) {
@@ -27,13 +28,13 @@ public class MergeSort {
         if (left == right) {
             return;
         }
-        //分成两半
-        int mid = left + (right - left) / 2;
+        //生成数组的分割位置，以所以的形式，这样就能从0开始
+        int dividerIndex = left + (right - left) / 2;
         //左边排序 进行递归
-        sort(arra, left, mid);
+        sort(arra, left, dividerIndex);
         //右边排序 进行递归
-        sort(arra, mid + 1, right);
-        merge(arra, left, mid + 1, right);
+        sort(arra, dividerIndex + 1, right);
+        merge(arra, left, dividerIndex, right);
     }
 
     /**
@@ -41,14 +42,14 @@ public class MergeSort {
      *
      * @param arra
      * @param leftPointer
-     * @param rightPointer
+     * @param dividerIndex
      * @param rightBound
      */
-    static void merge(int[] arra, int leftPointer, int rightPointer, int rightBound) {
-        int mid = rightPointer - 1;
+    static void merge(int[] arra, int leftPointer, int dividerIndex, int rightBound) {
+        int mid = dividerIndex;
         int[] temp = new int[rightBound - leftPointer + 1];
         int i = leftPointer;
-        int j = rightPointer;
+        int j = dividerIndex + 1;
         int k = 0;
         while (i <= mid && j <= rightBound) {
             //为了保证稳定性，要判断等号在前面
